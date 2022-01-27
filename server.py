@@ -7,7 +7,7 @@
 #    1. Go to Digital Ocean's App Platform:
 #       https://cloud.digitalocean.com/apps
 #
-#    2. Click "Launch Your App" and then "Link your Github Account"
+#    2. Click "Create App" and then "Link your Github Account"
 #
 #    3. Choose "All Repositories" or select only this one
 #
