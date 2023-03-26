@@ -26,7 +26,7 @@
 # 
 #   10. Wait to retrieve URL.
 #
-# Mariusz Banach / mgeeky, '22
+# Mariusz Banach / mgeeky, '22-'23
 # <mb [at] binary-offensive.com>
 #
 
@@ -41,7 +41,7 @@ import urllib.parse
 # Point onto your Teamserver or a landing page you want to reverse-proxy.
 # Cannot contain http:// , https:// and trailing slash
 
-teamserver          = 'www.bbc.com'
+teamserver          = os.environ.get('TEAMSERVER', 'www.bbc.com')
 
 # If true, will set Host header with value from `teamserver`
 rewrite_host_header = True
